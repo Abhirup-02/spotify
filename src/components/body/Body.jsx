@@ -8,7 +8,27 @@ import SongRow from '../songRow/SongRow'
 
 const Body = ({ spotify }) => {
   const [{ discover_weekly }, dispatch] = useDataLayerValue()
-  console.log(discover_weekly)
+  // console.log(discover_weekly)
+
+  // const playPlaylist = (id) => {
+  //   spotify.play({
+  //     context_uri: `spotify:playlist:35dfFAUNcOKvRubj4J7v8V`
+  //   })
+  //     .then((res) => {
+  //       spotify.getMyCurrentPlayingTrack().then((r) => {
+  //         dispatch({
+  //           type: "SET_ITEM",
+  //           item: r.item
+  //         })
+  //         dispatch({
+  //           type: "SET_PLAYING",
+  //           playing: true
+  //         })
+  //       })
+  //     })
+  // }
+
+  
 
   return (
     <div className="body">
@@ -25,14 +45,21 @@ const Body = ({ spotify }) => {
 
       <div className="body-songs">
         <div className="body-icons">
-          <PlayCircleFilledIcon className='body_shuffle' />
+          <PlayCircleFilledIcon
+            className='body_shuffle'
+            // onClick={playPlaylist}
+          />
           <FavouriteIcon fontSize='large' />
           <MoreHorizIcon />
         </div>
 
         {/* LIST OF SONGS */}
         {discover_weekly?.tracks.items.map((item) => (
-          <SongRow track={item.track} />
+          <SongRow
+            spotify={spotify}
+            key={item.added_at}
+            track={item.track}
+          />
         ))}
       </div>
     </div>

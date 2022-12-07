@@ -1,19 +1,9 @@
 .sidebar {
   flex: 0.2;
-  height: calc(100vh - 70px);
   background-color: #040404;
   color: white;
   max-width: max(40%, 200px);
-  padding-left: 10px;
-  padding-right: 10px;
-  /*display: flex;
-    flex-direction: column;
-    
-    padding-left: 10px;
-    padding-right: 10px;
-    min-width: 230px;
-    height: 100vh;
-    color: white;*/
+  padding: 0 10px;
 }
 
 .sidebar_title {
