@@ -3,7 +3,8 @@ export const initialState = {
   playlists: [],
   spotify: null,
   playing: false,
-  item: null
+  item: null,
+  // token: localStorage.getItem('token') || null
 }
 
 const reducer = (state, action) => {
@@ -24,7 +25,7 @@ const reducer = (state, action) => {
         playlists: action.playlists
       }
     default:
-      return {...state}
+      return { ...state }
   }
 }
 /*case "SET_PLAYING":

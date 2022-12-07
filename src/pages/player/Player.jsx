@@ -1,4 +1,3 @@
-import React from 'react';
 import "./Player.css";
 import Sidebar from '../../components/sidebar/Sidebar'
 import Body from '../../components/body/Body'
@@ -8,7 +7,7 @@ const Player = ({ spotify }) => {
   return (
     <div className="player">
 
-      <div className="player__body">
+      <div className="player_body">
         <Sidebar />
         <Body spotify={spotify} />
       </div>
@@ -17,4 +16,4 @@ const Player = ({ spotify }) => {
   )
 }
 
-export default Player;
+export default Player

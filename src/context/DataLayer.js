@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from "react"
+import { initialState } from "./reducer"
 
 export const DataLayerContext = createContext()
 

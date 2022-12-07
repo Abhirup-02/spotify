@@ -3,7 +3,7 @@
     flex-direction: column;
   }*/
   
-  .player__body {
+  .player_body {
     display: flex;
     /*flex-grow: 1;*/
   }

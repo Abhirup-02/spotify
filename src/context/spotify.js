@@ -10,7 +10,9 @@ const scopes = [
   "user-read-recently-played",
   "user-read-playback-state",
   "user-top-read",
-  "user-modify-playback-state"
+  "user-modify-playback-state",
+  "playlist-read-private",
+  "playlist-read-collaborative"
 ]
 
 export const getTokenFromUrl = () => {
@@ -18,10 +20,10 @@ export const getTokenFromUrl = () => {
     .substring(1)
     .split("&")
     .reduce((initial, item) => {
-      var parts = item.split("=");
-      initial[parts[0]] = decodeURIComponent(parts[1]);
+      let parts = item.split("=")
+      initial[parts[0]] = decodeURIComponent(parts[1])
 
-      return initial;
+      return initial
     }, {})
 }
 
