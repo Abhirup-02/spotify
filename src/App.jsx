@@ -14,8 +14,8 @@ const App = () => {
   useEffect(() => {
     const hash = getTokenFromUrl()
     const _token = hash.access_token
+    // localStorage.setItem('token', JSON.stringify(_token))
     window.location.hash = ''
-    localStorage.setItem('token', _token)
 
 
     if (_token) {
@@ -32,37 +32,36 @@ const App = () => {
         })
       })
 
-
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: 'SET_PLAYLISTS',
           playlists: playlists
         })
       })
+
     }
 
-    /*spotify.getPlaylist("37i9dQZEVXcJZyENOWUFo7").then((response) =>
+    spotify.getPlaylist('35dfFAUNcOKvRubj4J7v8V').then((response) =>
       dispatch({
         type: "SET_DISCOVER_WEEKLY",
-        discover_weekly: response,
+        discover_weekly: response
       })
-    );
+    )
 
-    spotify.getMyTopArtists().then((response) =>
+    /*spotify.getMyTopArtists().then((response) =>
       dispatch({
         type: "SET_TOP_ARTISTS",
         top_artists: response,
       })
-    );*/
+    )*/
 
     /*dispatch({
       type: "SET_SPOTIFY",
       spotify: spotify,
-    });*/
+    })*/
 
 
   }, [dispatch])
-
 
 
   return (

@@ -1,27 +1,22 @@
-.sidebarOption{
-    display:flex;
-    align-items:center;
-    color:grey;
-    height:40px;
-    cursor:pointer;
-    transition: 200ms color ease in;
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    color: grey;
+    height: 40px;
+    cursor: pointer;
+    transition: color 200ms ease-in;
 }
 
-.sidebarOption:hover{
-    color:white;
+.sidebarOption:hover {
+    color: white;
 }
-.sidebarOption_icon {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-  
-.sidebarOption > p {
+
+.sidebarOption>p {
     margin-top: 10px;
     margin-left: 20px;
     font-size: 14px;
 }
-.sidebar > hr {
-    border: 1px solid #282828;
-    width: 90%;
-    margin: 10px auto;
-  }
+
+.sidebarOption_logo{
+    margin: 0 5px 0 10px;
+}

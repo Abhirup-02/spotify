@@ -4,7 +4,7 @@ export const initialState = {
   spotify: null,
   playing: false,
   item: null,
-  // token: localStorage.getItem('token') || null
+  // token: "BQDS-lz-203b4W_u13tFLKdZH6Gmj55SMtPC62wtIEey4ODx8SzcFMj3BIY91EqoRXZxaLpW9KFSmKRf0D_CE6rldwYyQU_9w3czH6x_iabfTv57NcIzLuOnTLTglKk_FZcg4CvB7jOFcECf_cJgC-fMQCRli-jPisYFsQynq0AeVWcLOFMudvJKuRTJ22qVa-EO5qJcktUo9llyZ7U3oPgHHIpgujBjqg"
 }
 
 const reducer = (state, action) => {
@@ -24,8 +24,13 @@ const reducer = (state, action) => {
         ...state,
         playlists: action.playlists
       }
+    case "SET_DISCOVER_WEEKLY":
+      return {
+        ...state,
+        discover_weekly: action.discover_weekly
+      }
     default:
-      return { ...state }
+      return state
   }
 }
 /*case "SET_PLAYING":
@@ -40,11 +45,7 @@ const reducer = (state, action) => {
       item: action.item,
     };
  
-  case "SET_DISCOVER_WEEKLY":
-    return {
-      ...state,
-      discover_weekly: action.discover_weekly,
-    };
+  
  
   case "SET_TOP_ARTISTS":
     return {
